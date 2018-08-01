@@ -3,9 +3,8 @@ class CreateGossips < ActiveRecord::Migration[5.2]
     create_table :gossips do |t|
       t.string :title
       t.string :content
-      t.belongs_to :user, index: true
-      t.belongs_to :tag, index: true
-      t.timestamps 
+      t.string :anonymous_gossiper
+      t.timestamps
     end
   end
 end

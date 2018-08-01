@@ -1,0 +1,19 @@
+<h1 class="text-center">Des modifications à apporter ?</h1>
+<br>
+<center>
+  <div class="text-center mb-4">
+  </div>
+  <%= form_for @gossip,url: {action: "update"}, html: {class: "form-signin w-25"} do |f| %>
+    Ton pseudo :
+    <h2 class: "form-control"><%=Gossip.find(params[:id]).anonymous_gossiper%></h2>
+    <br /> <br />
+    Donne un titre à ton ragot :
+    <%= f.text_field :title, class: "form-control", value: Gossip.find(params[:id]).title %>
+    <br /> <br />
+    Bio :
+    <%= f.text_area :content, class: "form-control", value: Gossip.find(params[:id]).content %>
+    <br /> <br />
+    <%= f.submit "Modifier", class: "btn btn-lg btn-primary btn-block" %>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <% end %>
+</center>

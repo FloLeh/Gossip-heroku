@@ -1,0 +1,20 @@
+<h1 class="text-center">Raconte nous ce que tu veux !</h1>
+<br>
+<center>
+  <div class="text-center mb-4">
+    <h1 class="h3 mb-3 font-weight-normal">Créer un profil</h1>
+  </div>
+  <%= form_for @gossip,url: {action: "create"}, html: {class: "form-signin w-25"} do |f| %>
+    Rentre un pseudo pour garder ton anonymat :
+    <%= f.text_field :anonymous_gossiper, class: "form-control", placeholder: "Choisi ce que tu veux" %>
+    <br /> <br />
+    Donne un titre à ton ragot :
+    <%= f.text_field :title, class: "form-control", placeholder: "Mon super ragot" %>
+    <br /> <br />
+    Bio :
+    <%= f.text_area :content, class: "form-control", placeholder: "Balance tout ce que tu sais" %>
+    <br /> <br />
+    <%= f.submit "Créer", class: "btn btn-lg btn-primary btn-block" %>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <% end %>
+</center>

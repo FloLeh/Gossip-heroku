@@ -1,0 +1,16 @@
+<center>
+Les ragots déjà créés :
+<hr>
+<p>
+<% @gossips.each do |g| %>
+  <p>
+  <div>
+    <p><strong><%= g.anonymous_gossiper %></strong></p>
+    <p><%= g.title %></p>
+    <p><a class="btn btn-secondary" href=<%=gossip_path(g.id)%> role="button">Voir son ragot &raquo;</a></p>
+    <hr>
+  </div>
+  </p>
+<% end %>
+</p>
+</center>

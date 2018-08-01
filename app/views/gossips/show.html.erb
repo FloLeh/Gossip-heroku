@@ -1,0 +1,7 @@
+<h1 class="text-center">Voici le gossip créé par <%= @gossip.anonymous_gossiper %> </h1>
+<div class="center jumbotron">
+  <p>Concernant : <%= @gossip.title%></p>
+  <p class="border"><%= @gossip.content%></p>
+  <p><a class="btn btn-secondary" href=<%=edit_gossip_path(Gossip.find(params[:id]))%> role="button">Editer</a></p>
+  <%= link_to 'Clique pour détruire', @gossip,class: "btn btn-secondary", method: :delete %>
+</div>
